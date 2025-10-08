@@ -9,7 +9,7 @@ services:
       - "3000:3000"
     volumes:
       # Mount source code for hot-reload
-      - .:/services/erp/app
+      - ./services/erp:/app
       # Prevent node_modules from being overwritten
       - /app/node_modules
     environment:
