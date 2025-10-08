@@ -1,13 +1,13 @@
 # Tadbir
 
-## Prerequisites
+### Prerequisites
 
 - Docker  
 - Docker Compose  
 
 ---
 
-## Start the Application
+### Start the Application
 
 ```bash
 docker-compose up
@@ -58,12 +58,3 @@ The PostgreSQL database is available at:
 * **Username:** postgres
 * **Password:** postgres
 * **Database:** myapp
-
----
-
-## Hot Reload
-
-Code changes are automatically detected and the server restarts thanks to:
-
-* Volume mounting of source code
-* NestJS watch mode (`start:dev`)
