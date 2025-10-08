@@ -1,0 +1,33 @@
+
+# Node.js
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+
+# Env
+.env
+.env.*   # optional for multiple env files
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# NestJS
+coverage/
+
+# Python
+__pycache__/
+*.pyc
+
+# Docker
+*.dockerignore
