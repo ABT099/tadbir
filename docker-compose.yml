@@ -1,0 +1,43 @@
+
+services:
+  erp:
+    build:
+      context: ./services/erp/
+      dockerfile: Dockerfile.dev
+    container_name: tadbir-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source code for hot-reload
+      - .:/services/erp/app
+      # Prevent node_modules from being overwritten
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/tadbir-dev?schema=public
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: postgres:18-alpine
+    container_name: tadbir-dev-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=tadbir-dev
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge
+
