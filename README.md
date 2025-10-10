@@ -17,6 +17,8 @@ The API will be available at: [http://localhost:3000](http://localhost:3000)
 
 ---
 
+# Other Docker Commands
+
 ### Start with Rebuild (when dependencies change)
 
 ```bash

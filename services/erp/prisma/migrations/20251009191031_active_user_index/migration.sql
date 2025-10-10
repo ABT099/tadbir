@@ -1,0 +1,1 @@
+CREATE INDEX idx_users_active ON "Users" (id) WHERE deleted = false;
